@@ -1,0 +1,18 @@
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 15px; /* Espaciado entre enlaces */
+}
+
+.navbar-right .nav-link {
+  margin-right: 0; /* Aseguramos que el carrito no tenga margen extra */
+}

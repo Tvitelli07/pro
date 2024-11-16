@@ -1,0 +1,14 @@
+.product-section {
+    padding: 2rem 0;
+  }
+  
+  .product-section-title {
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #007bff;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }

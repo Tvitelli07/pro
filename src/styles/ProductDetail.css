@@ -53,3 +53,27 @@
     color: #fff;
   }
   
+  /* Estilo adicional para el producto */
+.container {
+  padding: 20px;
+  max-width: 800px;
+}
+
+.card-img-top {
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+}

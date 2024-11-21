@@ -1,18 +1,65 @@
-.navbar-left {
+/* Contenedor principal del navbar */
+.navbar {
+  background-color: #222; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Contenedor interior */
+.navbar-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.navbar-right {
-  margin-left: auto;
+/* Logo */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-logo:hover {
+  color: #ff4757; /* Cambia a un color rojo claro */
+}
+
+/* Links */
+.navbar-links {
   display: flex;
-  align-items: center;
+  gap: 20px;
 }
 
-.nav-link {
-  margin-right: 15px; /* Espaciado entre enlaces */
+.navbar-link {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
 }
 
-.navbar-right .nav-link {
-  margin-right: 0; /* Aseguramos que el carrito no tenga margen extra */
+.navbar-link:hover {
+  color: #ff4757; /* Cambia a un color rojo claro */
+}
+
+/* Carrito */
+.navbar-cart {
+  font-size: 1.2rem;
+}
+
+.cart-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.cart-link:hover {
+  color: #ff4757; /* Cambia a un color rojo claro */
 }

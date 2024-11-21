@@ -1,4 +1,3 @@
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
@@ -16,12 +15,12 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path="/" element={<ProductList />} />
-          <Route path="/partes-de-arriba" element={<ProductSection category="remera" />} />
-          <Route path="/partes-de-abajo" element={<ProductSection category="bermuda pantalon" />} />
+          <Route path="/partes-de-arriba" element={<ProductSection category="partes-de-arriba" />} />
+          <Route path="/partes-de-abajo" element={<ProductSection category="partes-de-abajo" />} />
           <Route path="/zapatillas" element={<ProductSection category="zapatillas" />} />
+          <Route path="/item/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/item/:id" element={<ProductDetail />} />
         </Routes>
       </Router>
     </CartProvider>

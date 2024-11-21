@@ -54,52 +54,42 @@ const Cart = () => {
     };
 
     // Calcular el total del carrito
-    const total = cart && cart.length > 0 ? cart.reduce((sum, item) => sum + (item.price || 0), 0) : 0;
+    const total = cart && cart.length > 0
+        ? cart.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0)
+        : 0;
 
     return (
         <div className="cart-container">
-            <h2>
-                Tu Carrito
-            </h2>
+            <h2>Tu Carrito</h2>
             {(!cart || cart.length === 0) ? (
-                <p>
-                    Tu carrito está vacío
-                </p>
+                <p className="empty-cart-message">Tu carrito está vacío</p>
             ) : (
-                <ul className="cart-list">
-                    {cart.map((item, index) => (
-                        <li
-                            key={item.id || index}
-                            className="cart-item"
-                        >
-                            <span className="item-name">
-                                {item.name || "Sin nombre"}
-                            </span>
-                            <span className="item-price">
-                                {item.price ? `${item.price} $` : "Precio no disponible"}
-                            </span>
-                        </li>
-                    ))}
-                </ul>
-            )}
-            {cart && cart.length > 0 && (
-                <div className="cart-total">
-                    <h3>
-                        Total: <span className="total-amount">{total.toFixed(2)} $</span>
-                    </h3>
-                </div>
+                <>
+                    <ul className="cart-list">
+                        {cart.map((item, index) => (
+                            <li key={item.id || index} className="cart-item">
+                                <span className="item-name">
+                                    {item.name || "Producto sin nombre"}
+                                </span>
+                                <span className="item-quantity">
+                                    Cantidad: {item.quantity || 1}
+                                </span>
+                                <span className="item-price">
+                                    Precio: {item.price ? `${item.price} $` : "No disponible"}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="cart-total">
+                        <h3>Total: <span className="total-amount">{total.toFixed(2)} $</span></h3>
+                    </div>
+                </>
             )}
             <div className="cart-buttons">
-                <button
-                    className="clear-cart-button"
-                    onClick={handleClearCart}
-                >
+                <button className="clear-cart-button" onClick={handleClearCart}>
                     Eliminar Todo
                 </button>
-                <button
-                    className="checkout-button"
-                    onClick={handleCheckout}
-                >
+                <button className="checkout-button" onClick={handleCheckout}>
                     Pagar Total
                 </button>
             </div>
